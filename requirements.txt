@@ -1,0 +1,14 @@
+streamlit
+pandas
+numpy
+
+sqlalchemy
+psycopg2-binary
+
+plotly
+plotly-express
+
+matplotlib
+seaborn
+
+python-dotenv

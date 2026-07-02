@@ -1,0 +1,35 @@
+# ==========================================
+.env
+.env.local
+.env.*
+secrets.json
+
+# ==========================================
+# 2. Python Environment & Cache Files
+# ==========================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ==========================================
+# 3. Streamlit & IDE Settings
+# ==========================================
+.streamlit/config.toml
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+
+# ==========================================
+# 4. Large Raw Data Files (Optional but highly recommended)
+# ==========================================
+# Ignore the local data folder entirely
+data/

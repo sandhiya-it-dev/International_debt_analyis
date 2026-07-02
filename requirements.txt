@@ -1,9 +1,0 @@
-streamlit
-pandas
-plotly
-matplotlib
-seaborn
-psycopg2-binary
-sqlalchemy
-python-dotenv
-numpy

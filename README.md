@@ -1,152 +1,197 @@
-�� International Debt Analytics Dashboard
-An end-to-end data analytics project that analyzes international debt statistics using Python, Pandas,
-PostgreSQL, SQL, and Streamlit. The project includes data cleaning, exploratory data analysis (EDA),
-database integration, SQL querying, and an interactive dashboard for visualizing global debt trends.
+# International Debt Analytics Dashboard
 
-�� Project Overview
-This project processes multiple International Debt Statistics datasets, cleans and transforms the data,
-stores it in a PostgreSQL database, and presents insights through an interactive Streamlit dashboard.
+An end-to-end data analytics project that analyzes international debt statistics using Python, Pandas, PostgreSQL, SQL, and Streamlit. The project includes data cleaning, exploratory data analysis (EDA), database integration, SQL querying, and an interactive dashboard for visualizing global debt trends.
+
+## Project Overview
+
+This project processes multiple International Debt Statistics datasets, cleans and transforms the data, stores it in a PostgreSQL database, and presents insights through an interactive Streamlit dashboard.
+
 The dashboard enables users to:
- Analyze country-wise debt distribution
- Identify countries with the highest and lowest debt
- Explore debt indicators
- Visualize debt trends and patterns
- Filter and interact with the data dynamically
 
-�� Folder Structure
+- Analyze country-wise debt distribution
+- Identify countries with the highest and lowest debt
+- Explore different debt indicators
+- Visualize debt trends and patterns over time
+- Filter and interact with the data dynamically
+
+## Folder Structure
+
+```text
 INTERNATIONAL_DEBT/
 ├── README.md
 ├── .gitignore
 ├── .venv/
 ├── data/
-│ ├── IDS_ALLCountries_Data.csv
-│ ├── IDS_ALLCountries_Data_cleaned.csv
-│ ├── IDS_CountryMetaData.csv
-│ ├── IDS_CountryMetaData_cleaned.csv
-│ ├── IDS_SeriesMetaData.csv
-│ ├── IDS_SeriesMetaData_cleaned.csv
-│ ├── IDS_FootNoteMetaData.csv
-│ ├── IDS_FootNoteMetaData_cleaned.csv
-│ ├── Country-Series - Metadata.csv
-│ └── country_series_metadata_cleaned.csv
+│   ├── IDS_ALLCountries_Data.csv
+│   ├── IDS_ALLCountries_Data_cleaned.csv
+│   ├── IDS_CountryMetaData.csv
+│   ├── IDS_CountryMetaData_cleaned.csv
+│   ├── IDS_SeriesMetaData.csv
+│   ├── IDS_SeriesMetaData_cleaned.csv
+│   ├── IDS_FootNoteMetaData.csv
+│   ├── IDS_FootNoteMetaData_cleaned.csv
+│   ├── Country-Series - Metadata.csv
+│   └── country_series_metadata_cleaned.csv
 ├── scripts/
-│ ├── clean1.py
-│ ├── clean2.py
-│ ├── clean3.py
-│ ├── clean4.py
-│ └── clean5.py
+│   ├── clean1.py
+│   ├── clean2.py
+│   ├── clean3.py
+│   ├── clean4.py
+│   └── clean5.py
 ├── sql/
-│ └── international_debt.sql
+│   └── international_debt.sql
 └── streamlit_dashboard/
-├── app.py
-├── database.py
-├── requirements.txt
-├── .env
-├── utils/
-└── __pycache__/
+    ├── app.py
+    ├── database.py
+    ├── requirements.txt
+    ├── .env
+    ├── utils/
+    └── __pycache__/
+```
 
-�� Project Workflow
-1. Data Collection
- Imported multiple International Debt Statistics datasets.
- Included country-level, series-level, and metadata files.
-2. Data Cleaning &amp; Preprocessing
+## Project Workflow
 
-The datasets were cleaned using five Python scripts. Cleaning steps included:
- Handling missing values
- Removing duplicate records
- Data type conversion
- Standardizing column names
- Validating and cleaning datasets
- Exporting cleaned CSV files
+### 1. Data Collection
 
-3. Exploratory Data Analysis (EDA)
-Performed EDA to:
- Analyze debt distribution by country
- Identify highest and lowest debt countries
- Explore debt indicators
- Generate descriptive statistics
- Discover trends and patterns
+- Imported multiple International Debt Statistics (IDS) datasets.
+- Included country-level, series-level, footnote, and metadata files.
 
-4. PostgreSQL Database Integration
- Created database tables
- Imported cleaned datasets
- Executed SQL queries for analysis
- Connected the dashboard using SQLAlchemy
+### 2. Data Cleaning & Preprocessing
 
-5. Dashboard Development
-Developed an interactive Streamlit dashboard with:
- Dynamic filters
- Interactive Plotly charts
- Country-wise analysis
- Indicator-wise analysis
- Debt trend visualization
+The datasets were cleaned using five Python scripts (`clean1.py` to `clean5.py`). Key steps:
 
-✨ Features
- Data cleaning using Pandas
- Exploratory Data Analysis (EDA)
- PostgreSQL database integration
- SQL-based analysis
+- Handling missing values
+- Removing duplicate records
+- Performing data type conversions
+- Standardizing column names
+- Validating and cleaning datasets
+- Exporting cleaned CSV files into the `data/` folder
 
- Interactive Streamlit dashboard
- Dynamic filtering
- Interactive Plotly visualizations
- Country and indicator analysis
+### 3. Exploratory Data Analysis (EDA)
 
+EDA was performed to:
 
-��️ Technologies Used
- Language: Python, SQL
- Data Libraries: Pandas, SQLAlchemy
- Database: PostgreSQL
- Visualization: Plotly Express, Matplotlib, Seaborn
- Framework: Streamlit
+- Analyze debt distribution by country
+- Identify countries with the highest and lowest debt
+- Explore debt indicators and their impact
+- Generate descriptive statistics
+- Discover patterns and trends across regions and time
 
+### 4. PostgreSQL Database Integration
 
-�� Installation &amp; Setup
-1. Clone the Repository
-git clone &lt;repository-url&gt;
+- Created database tables using `sql/international_debt.sql`
+- Imported cleaned datasets into PostgreSQL
+- Executed SQL queries for aggregations and joins
+- Connected the dashboard to PostgreSQL using SQLAlchemy in `database.py`
+
+### 5. Dashboard Development
+
+Developed an interactive Streamlit dashboard (`streamlit_dashboard/app.py`) with:
+
+- Dynamic sidebar filters (e.g., region)
+- Interactive Plotly charts
+- Country-wise debt analysis
+- Indicator-wise debt analysis
+- Debt trend visualization over time by income group
+
+## Features
+
+- Data cleaning and preprocessing using Pandas
+- Exploratory Data Analysis (EDA)
+- PostgreSQL database integration
+- SQL-based analysis for aggregations and joins
+- Interactive Streamlit dashboard
+- Dynamic filtering and slicing
+- Interactive visualizations using Plotly, Matplotlib, and Seaborn
+- Country-wise and indicator-wise insights
+
+## Technologies Used
+
+- **Language:** Python, SQL
+- **Data Libraries:** Pandas, SQLAlchemy
+- **Database:** PostgreSQL
+- **Visualization:** Plotly Express, Matplotlib, Seaborn
+- **Framework:** Streamlit
+- **Environment Management:** `python-dotenv`, virtualenv
+
+## Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
 cd INTERNATIONAL_DEBT
+```
 
-2. Set Up Virtual Environment
+### 2. Set Up Virtual Environment
+
+```bash
 python -m venv .venv
+```
 
-3. Activate Virtual Environment
-Windows:
+### 3. Activate Virtual Environment
+
+**Windows:**
+
+```bash
 .venv\Scripts\activate
-Mac/Linux:
+```
+
+**Mac/Linux:**
+
+```bash
 source .venv/bin/activate
+```
 
-4. Install Dependencies
-python3 -m pip install -r streamlit_dashboard/requirements.txt
+### 4. Install Dependencies
 
-5. Configure Environment Variables
-Create a .env file inside the streamlit_dashboard/ directory and configure your server credentials:
+From the project root (or directly inside `streamlit_dashboard/`):
+
+```bash
+python -m pip install -r streamlit_dashboard/requirements.txt
+```
+
+### 5. Configure Environment Variables
+
+Create a `.env` file inside `streamlit_dashboard/` and configure your PostgreSQL credentials:
+
+```env
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=international_debt
 DB_USER=your_username
-
 DB_PASSWORD=your_password
+```
 
-6. Run the Application
+### 6. Run the Application
+
+```bash
 cd streamlit_dashboard
 streamlit run app.py
+```
 
-�� Dashboard Insights
-The analytical views provide visual layouts for tracking:
- Country-wise debt distribution
- Top countries with the highest/lowest debt metrics
- Indicator-wise macroeconomic debt analysis
- Timeline debt trend tracking
- Interactive sidebar filtering
-�� Future Enhancements
- Add machine learning-based debt forecasting models
- Deploy the live dashboard platform to Streamlit Cloud
- Implement reporting tools to export views as PDF/Excel packages
- Refine framework responsiveness and user session validation
+## Dashboard Insights
 
-�� Dataset
-This project implements historical data tracking derived from the open-source World Bank International
-Debt Statistics (IDS) ecosystem alongside relevant relational metadata series.
+The dashboard provides visual insights for:
 
-��‍�� Author: Sandhiya Chandrasekar
+- Country-wise debt distribution
+- Top countries with the highest and lowest debt
+- Indicator-wise macroeconomic debt analysis
+- Timeline-based debt trend tracking
+- Interactive filtering by region and income group
+
+## Future Enhancements
+
+- Add machine learning-based debt forecasting models
+- Deploy the dashboard to Streamlit Community Cloud
+- Implement reporting tools to export views as PDF/Excel
+- Improve responsiveness, UI styling, and session handling
+
+## Dataset
+
+The project uses historical data inspired by the World Bank International Debt Statistics (IDS) datasets, along with associated country, series, and metadata files.
+
+## Author
+
+**Sandhiya Chandrasekar**  
 Data Analyst | Python | SQL | PostgreSQL | Streamlit | Power BI | Machine Learning
